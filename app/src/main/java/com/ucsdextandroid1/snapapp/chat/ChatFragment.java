@@ -46,12 +46,7 @@ public class ChatFragment extends Fragment {
         ChatAdapter adapter = new ChatAdapter();
         recyclerView.setAdapter(adapter);
 
-        adapter.setCallback(new ChatAdapter.Callback() {
-            @Override
-            public void onChatClicked(Chat chat) {
-                Toast.makeText(getContext(), chat.getFromName(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        //TODO add click listener to adapter
 
         DataSources.getInstance().getChatItems(new DataSources.Callback<List<Chat>>() {
             @Override
@@ -61,6 +56,10 @@ public class ChatFragment extends Fragment {
         });
 
         return root;
+    }
+
+    private void onItemClick(Chat chat) {
+        Toast.makeText(getContext(), chat.getFromName(), Toast.LENGTH_SHORT).show();
     }
 
 }

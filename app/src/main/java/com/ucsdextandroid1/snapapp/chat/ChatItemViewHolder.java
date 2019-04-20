@@ -23,7 +23,6 @@ public class ChatItemViewHolder extends RecyclerView.ViewHolder {
     private TextView emojiView;
 
     private Chat currentChat;
-    private ChatClickListener clickListener;
 
     public static ChatItemViewHolder inflate(ViewGroup parent) {
         return new ChatItemViewHolder(LayoutInflater.from(parent.getContext())
@@ -38,17 +37,7 @@ public class ChatItemViewHolder extends RecyclerView.ViewHolder {
         subtitleView = itemView.findViewById(R.id.vci_subtitle);
         emojiView = itemView.findViewById(R.id.vci_emoji);
 
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(clickListener != null && currentChat != null)
-                    clickListener.onChatClicked(currentChat);
-            }
-        });
-    }
-
-    public void setClickListener(ChatClickListener listener) {
-        clickListener = listener;
+        //TODO add click listener
     }
 
     public void bind(Chat chat) {
@@ -77,7 +66,7 @@ public class ChatItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public interface ChatClickListener {
-        void onChatClicked(Chat chat);
+
     }
 
 }
