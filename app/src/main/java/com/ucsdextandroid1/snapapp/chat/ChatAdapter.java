@@ -14,6 +14,8 @@ public class ChatAdapter extends RecyclerView.Adapter {
 
     private List<Chat> items = new ArrayList<>();
 
+    private ChatItemViewHolder.ChatClickListener listener;
+
     public void setItems(List<Chat> chats) {
         this.items.clear();
         this.items.addAll(chats);
@@ -24,6 +26,7 @@ public class ChatAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ChatItemViewHolder viewHolder = ChatItemViewHolder.inflate(parent);
+        viewHolder.setOnChatItemClickCallback(listener);
         return viewHolder;
     }
 
@@ -37,6 +40,10 @@ public class ChatAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         return this.items.size();
+    }
+
+    public void setOnItemClickCallback(ChatItemViewHolder.ChatClickListener listener) {
+        this.listener = listener;
     }
 
 }
