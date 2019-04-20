@@ -1,12 +1,15 @@
 package com.ucsdextandroid1.snapapp.main;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.View;
 
 import com.ucsdextandroid1.snapapp.R;
+import com.ucsdextandroid1.snapapp.util.WindowUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.am_toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_search_white_24dp);
+        setSupportActionBar(toolbar);
+        WindowUtil.doOnApplyWindowInsetsToMargins(toolbar, true, false);
 
         final View background = findViewById(R.id.am_background_view);
         ViewPager viewPager = findViewById(R.id.am_view_pager);
@@ -45,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageSelected(int position) { }
+            public void onPageSelected(int position) {
+                ActionBar actionBar = getSupportActionBar();
+                if(actionBar != null)
+                    actionBar.setTitle(adapter.getPageTitle(position));
+            }
 
             @Override
             public void onPageScrollStateChanged(int state) { }

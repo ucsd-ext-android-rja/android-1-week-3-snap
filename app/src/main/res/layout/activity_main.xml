@@ -14,6 +14,12 @@
         android:background="@color/light_blue"
         android:alpha=".5"/>
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/am_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@color/white"/>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/am_view_pager"
         android:layout_width="match_parent"
