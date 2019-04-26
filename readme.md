@@ -27,8 +27,8 @@ I would recommend starting with the ViewHolder, then moving on the the Adapter a
 #### Requirements: 
  - The first item in the list should be a title item (the ViewHolder has already been created for you, **StoriesSectionTitleViewHolder**)
  - The list should then display the list of stories items returned by the DataSources class as a grid. 
- - The grid should have a span of 2, meaning you should be able to see 2 stories cards at once. 
- - When you click on the story items in the grid (not the title) the method **onStoryClicked(Story story)** should be called. You can do whatever you want in this method.
- - All TODO items in these classes should be completed
+ - The grid should have a span of 2, meaning you should be able to see 2 stories cards at once, but the title should fill match the width of the list. 
+ - When you click on the story items in the grid (not the title) the method **StoriesFragment.onStoryClicked(Story story)** should be called. You can do whatever you want in this method.
+ - All TODO items in **StoryCardViewHolder**, **StoriesAdapter**  and **StoriesFragment** should be completed.
  
  ![Image](stories_grid.png)
