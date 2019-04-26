@@ -30,7 +30,8 @@ public class StoryCardViewHolder extends RecyclerView.ViewHolder {
     public void bind(Story story) {
         //TODO set the currentStory
 
-        //TODO load the imageUrl into the imageView using Picasso
+        //TODO load the imageUrl into the imageView using Picasso (http://square.github.io/picasso/)
+        //the library has already been added to the project.
 
         //TODO set the title and the subtitle
     }

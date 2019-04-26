@@ -15,6 +15,9 @@ import com.ucsdextandroid1.snapapp.R;
  */
 public class StoriesSectionTitleViewHolder extends RecyclerView.ViewHolder {
 
+    //this class is already done, you just need to call inflate and bind in the correct places in
+    //your adapter.
+
     public static StoriesSectionTitleViewHolder inflate(ViewGroup parent) {
         return new StoriesSectionTitleViewHolder(LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.view_stories_title, parent, false));
