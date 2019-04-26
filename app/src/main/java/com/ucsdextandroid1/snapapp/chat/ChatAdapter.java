@@ -14,6 +14,7 @@ public class ChatAdapter extends RecyclerView.Adapter {
 
     private List<Chat> items = new ArrayList<>();
 
+    // reference to the current click listener
     private ChatItemViewHolder.ChatClickListener listener;
 
     public void setItems(List<Chat> chats) {
@@ -26,6 +27,8 @@ public class ChatAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ChatItemViewHolder viewHolder = ChatItemViewHolder.inflate(parent);
+        // TODO added during class 3:
+        // we add our click listener to our view holder after it is created because it is the same for every item
         viewHolder.setOnChatItemClickCallback(listener);
         return viewHolder;
     }
@@ -42,6 +45,8 @@ public class ChatAdapter extends RecyclerView.Adapter {
         return this.items.size();
     }
 
+    // TODO added during class 3:
+    // a method to set our custom click listener
     public void setOnItemClickCallback(ChatItemViewHolder.ChatClickListener listener) {
         this.listener = listener;
     }

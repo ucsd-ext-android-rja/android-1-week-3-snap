@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,7 +40,9 @@ public class ChatItemViewHolder extends RecyclerView.ViewHolder {
         subtitleView = itemView.findViewById(R.id.vci_subtitle);
         emojiView = itemView.findViewById(R.id.vci_emoji);
 
-        //TODO add click listener
+        // TODO added during class 3:
+        // the itemView is just the background of the list item so we add our click listeners
+        // directly to that view.
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,15 +50,21 @@ public class ChatItemViewHolder extends RecyclerView.ViewHolder {
                 Log.d("ChatItemViewHolder", "Click detected");
                 Log.d("ChatItemViewHolder", currentChat.getFromName());
 
-                chatClickListener.onChatItemClick(currentChat);
+                // if our custom click listener has been set we call it with the current chat item
+                if(chatClickListener != null && currentChat != null)
+                    chatClickListener.onChatItemClick(currentChat);
             }
         });
 
+        // TODO added during class 3:
+        // we can also do something when someone does a long click on the itemView
         itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                chatClickListener.onChatItemLongClick(currentChat);
-                return true;
+                if(chatClickListener != null && currentChat != null)
+                    chatClickListener.onChatItemLongClick(currentChat);
+
+                return true; //we return true here to prevent the click from being passed to views under this view
             }
         });
     }
@@ -87,14 +94,21 @@ public class ChatItemViewHolder extends RecyclerView.ViewHolder {
         }
     }
 
+    // TODO added during class 3:
+    // a custom method to set our custom click listener
     public void setOnChatItemClickCallback(ChatClickListener listener) {
         chatClickListener = listener;
     }
 
+    // TODO added during class 3:
+    // a custom interface we define that has all the different actions we might want to take on this view holder
     public interface ChatClickListener {
         void onChatItemClick(Chat chat);
 
         void onChatItemLongClick(Chat chat);
+
+        // We could add more methods here for when someone clicks the image or emoji. Because we
+        // made this interface we can control all the methods and add every action we care about.
     }
 
 }
