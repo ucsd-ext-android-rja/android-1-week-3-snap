@@ -11,10 +11,10 @@ Week 3 - Snap App
 The goal of this assignment is to review all the concepts we have covered so far including...
 
  1. Basic RecyclerView use
- 2. Adding multiple view types to one RecyclerView
- 3. Using the GridLayoutManager to change our list into a grid
- 4. Override the span of certain items in our list so that even in a grid they still appear like normal list items.
- 5. Add a custom click listener to a view holder and do call a specific method when the click occurs.
+ 2. Adding multiple view types to one RecyclerView [Example from week 2](https://github.com/ucsd-ext-android-rja/andriod-1-week-2-photos/blob/inclass/app/src/main/java/com/ucsdextandroid1/photosapp/profile/FeedAdapter.java)
+ 3. Using the GridLayoutManager to change our list into a grid [Example from week 2](https://github.com/ucsd-ext-android-rja/andriod-1-week-2-photos/blob/inclass/app/src/main/java/com/ucsdextandroid1/photosapp/profile/ProfileFragment.java#L52-L60)
+ 4. Override the span of certain items in our list so that even in a grid they still appear like normal list items. [Example from week 2](https://github.com/ucsd-ext-android-rja/andriod-1-week-2-photos/blob/inclass/app/src/main/java/com/ucsdextandroid1/photosapp/profile/FeedAdapter.java#L95-L104)
+ 5. Add a custom click listener to a view holder and do call a specific method when the click occurs.[Example from week 3](../blob/master/app/src/main/java/com/ucsdextandroid1/snapapp/chat/ChatItemViewHolder.java#L105-L112)
 
 To do this you will finish implementing the **StoryCardViewHolder**, the **StoriesAdapter**  and the **StoriesFragment** classes in the SnapApp project.
 
@@ -26,8 +26,8 @@ I would recommend starting with the ViewHolder, then moving on the the Adapter a
 
  - The first item in the list should be a title item (the ViewHolder has already been created for you, **StoriesSectionTitleViewHolder**)
  - The list should then display the list of stories items returned by the DataSources class as a grid. 
- - The grid should have a span of 2, meaning you should be abled to see 2 stories cards at once. 
+ - The grid should have a span of 2, meaning you should be able to see 2 stories cards at once. 
  - When you click on the story items in the grid (not the title) the method **onStoryClicked(Story story)** should be called. You can do whatever you want in this method.
  - All //TODO items in these classes should be completed
  
- [![CodePath](https://github.com/ucsd-ext-android-rja/android-1-week-3-snap/blob/master/stories_grid.png)]
+ [![CodePath](../blob/master/stories_grid.png)]
