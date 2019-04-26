@@ -30,4 +30,4 @@ I would recommend starting with the ViewHolder, then moving on the the Adapter a
  - When you click on the story items in the grid (not the title) the method **onStoryClicked(Story story)** should be called. You can do whatever you want in this method.
  - All //TODO items in these classes should be completed
  
- [![CodePath](https://github.com/ucsd-ext-android-rja/android-1-week-3-snap/blob/master/stories_grid.png)]
+ ![Image](stories_grid.png)
