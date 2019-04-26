@@ -1,12 +1,12 @@
 Week 3 - Snap App
 ===================
-###In Class Goals:
+### In Class Goals:
  - Quickly review the basics of RecyclerView Adapter 
  - Learn how to add custom interfaces defining all the actions in a ViewHolder 
  - Start work on the SnapApp Stories assignment
 
 ----------
-###SnapApp Stories assignment 
+### SnapApp Stories assignment 
 
 The goal of this assignment is to review all the concepts we have covered so far including...
 
